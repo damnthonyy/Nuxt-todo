@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <h1 class="text-lg font-bold text-center">Header</h1>
+    <h1 class="text-lg font-bold text-center">Login</h1>
   </div>
 </template>

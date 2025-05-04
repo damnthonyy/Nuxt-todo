@@ -11,13 +11,13 @@
                     Home
                  </NuxtLink></li>
             <li class="cursor-pointer hover:text-blue-500 font-[1.2rem]">
-                <NuxtLink to="/about">
-                    About
+                <NuxtLink to="/login">
+                    Login
                 </NuxtLink>
             </li>
             <li class="cursor-pointer hover:text-blue-500 font-[1.2rem]">
-                <NuxtLink to="/contact">
-                    Contact
+                <NuxtLink to="/dashboard">
+                    Dashboard
                 </NuxtLink>
             </li>
         </ul>
