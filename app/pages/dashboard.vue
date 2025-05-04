@@ -3,6 +3,6 @@
 </script>
 
 <template>
-    <h1 class="text-2xl font-bold text-center">Contact</h1>
+    <h1 class="text-2xl font-bold text-center">dashboard</h1>
   
 </template>
