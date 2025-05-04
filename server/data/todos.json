@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "title": "Initialiser le projet Nuxt 4",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Mettre en place le layout global",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Créer les composables useAuth et useTodos",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Écrire le middleware auth pour protéger le dashboard",
+      "completed": false
+    }
+]
