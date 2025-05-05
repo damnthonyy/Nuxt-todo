@@ -1,43 +1,43 @@
-<template>
-    <div class="flex justify-center mt-10">
-        <div class="flex gap-2">
-            <input type="text" v-model="newTodo" @keyup.enter="saveTodo" class="border-2 w-[350px] h-[40px] rounded-md p-2"/>
-            <button type="button" @click="saveTodo" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer w-[100px]">Save</button>
-            <button type="button" @click="deleteTodo" class="bg-red-500 text-white p-2 rounded-md cursor-pointer w-[100px]">Delete</button>
-        </div>
-        
-    </div>
-</template>
-
 <script setup lang="ts">
-import { ref } from 'vue';
+const {newTodo,todos,addTodo,deleteTodo,toggleTodo}=useTodos()
 
-// Definir TodoItem
-
-interface TodoItem{
-    id?: number;
-    title?: string;
-    completed?: boolean;
+// fetch todos
+async function fetchTodos(){
+    todos.value = await $fetch('api/todos')
 }
 
+onMounted(fetchTodos);
 
-const props = defineProps<TodoItem>()
+const NewTodo= ref<string>('')
 
-// Definir newTodo
-const newTodo = ref<string>('');
-
-// Callbacks Save, Delete,
-
-function saveTodo(): void {
-    // code
-    console.log(newTodo.value);
-}
-
-function deleteTodo(): void {
-    //code 
-    console.log(`${newTodo.value} deleted`);
+const handleAdd= async()=>{
+    if(NewTodo.value.trim()){
+        await addTodo(NewTodo.value)
+        NewTodo.value=''
+    }
 }
 
 </script>
+
+
+<template>
+    <div class="flex justify-center mt-10">
+            <div class="flex gap-2">
+                <input type="text" v-model="newTodo" @keyup.enter="handleAdd" class="border-2 w-[350px] h-[40px] rounded-md p-2"/>
+                <button @click="handleAdd" class="bg-blue-500 text-white p-2 rounded-md cursor-pointer w-[100px]">Save</button>
+            </div>
+    </div>
+    <div class="flex justify-center mt-10">
+        <ul>
+            <li v-for="todo in todos" :key="todo.id" class="flex gap-2">
+                <span>{{todo.title}}</span>
+                <button @click="deleteTodo(todo.id)" class="bg-red-500 text-white p-2 rounded-md cursor-pointer w-[100px]">Delete</button>
+                <input type="checkbox" :checked="todo.completed" @change="toggleTodo(todo.id)"/>
+            </li>
+        </ul>
+    </div>
+</template>
+
+
 
 
