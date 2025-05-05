@@ -5,14 +5,13 @@ export const useTodos = () => {
         completed: boolean;
     }
 
-    const newTodo = ref<string>('');
     const todos = ref<TodoItem[]>([]);
 
-    const addTodo = async (title: string) => {
+    const addTodo = async (title:string) => {
         const todo = await $fetch('api/todos', {
             method: 'POST',
             body: {
-                title,
+                title:title,    
             }
         })
         todos.value.push(todo as TodoItem)
@@ -37,7 +36,6 @@ export const useTodos = () => {
     }
 
     return {
-        newTodo,
         todos,
         addTodo,
         deleteTodo,
