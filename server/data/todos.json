@@ -1,32 +1,7 @@
 [
   {
-    "id": 1,
-    "title": "Initialiser le projet Nuxt 4",
-    "completed": false
-  },
-  {
-    "id": 2,
-    "title": "Mettre en place le layout global",
-    "completed": true
-  },
-  {
-    "id": 3,
-    "title": "Créer les composables useAuth et useTodos",
-    "completed": false
-  },
-  {
-    "id": 4,
-    "title": "Écrire le middleware auth pour protéger le dashboard",
-    "completed": false
-  },
-  {
-    "id": 1746478991013,
-    "title": "todo",
-    "completed": false
-  },
-  {
-    "id": 1746479003344,
-    "title": "lorem ipsum",
+    "id": 1746531056983,
+    "title": "Edumapper",
     "completed": false
   }
 ]
